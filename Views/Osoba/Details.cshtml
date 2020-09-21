@@ -1,0 +1,36 @@
+﻿@model Osoba
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detaljno</h1>
+
+<div>
+    <h4>Osoba</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+         Ime
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Ime
+        </dd>
+        <dt class = "col-sm-2">
+            Prezime
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Prezime
+        </dd>
+        <dt class = "col-sm-2">
+            Adresa
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.Adresa
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OsobaId">Promijeni</a> |
+    <a asp-action="Index">Povratak na listu</a>
+</div>

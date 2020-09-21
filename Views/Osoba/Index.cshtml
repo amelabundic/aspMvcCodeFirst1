@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Osoba>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Pocetna strana</h1>
+
+<p>
+    <a asp-action="Create">Nova osoba</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+             Ime
+            </th>
+            <th>
+              Prezime
+            </th>
+            <th>
+               Adresa
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var os in Model) {
+        <tr>
+            <td>
+                @os.Ime
+            </td>
+            <td>
+                @os.Prezime
+            </td>
+            <td>
+                @os.Adresa
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@os.OsobaId">Promijeni</a> |
+                <a asp-action="Details" asp-route-id="@os.OsobaId">Detaljno</a> |
+                <a asp-action="Delete" asp-route-id="@os.OsobaId">Obrisi</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
